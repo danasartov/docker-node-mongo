@@ -1,6 +1,3 @@
-auth:
-  enabled: true
-  mongodbDatabase: docker-node-mongo
 imagePullSecrets: []
 installImage:
   repository: unguiculus/mongodb-install
