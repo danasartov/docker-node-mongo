@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                // Get some code from a GitHub repository
+                git branch: '**', url: 'https://github.com/danasartov/docker-node-mongo.git'
+            }
+        }
+        stage('Create the app') {
+            steps {
+                // Creating the docker app
+                bat "helm install mongodb -f mongodb-values.yaml stable/mongodb"
+                bat "helm install nodejs ./nodeapp"
+            }
+        }
+    }
