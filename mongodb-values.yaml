@@ -40,7 +40,7 @@ tolerations: []
 extraLabels: {}
 persistentVolume:
   enabled: true
-  existingClaim: mongodb-claim
+  existingClaim: 
   #storageClass: "-"
   accessModes:
     - ReadWriteOnce
